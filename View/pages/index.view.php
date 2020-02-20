@@ -1,0 +1,3 @@
+<main>
+    Pagina principal
+</main>
