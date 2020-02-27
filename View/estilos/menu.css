@@ -1,0 +1,16 @@
+.menuPrincipal{
+    width: 80%;
+    margin: auto;
+    background-color:#e8e8e8;
+    min-height: 400px;
+    border-radius: 15px 15px 0 0;
+}
+.secCont{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.headSpace{
+    height: 90px;
+    width: 100%;
+}
