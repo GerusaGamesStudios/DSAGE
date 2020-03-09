@@ -50,18 +50,18 @@
         }
 
         function VisualizarCuenta(){
-            echo("ID Empleado: " . $this->getID_Empleado() ) "<br>"; 
-            echo("Cargo: " . $this->getCargo() ) "<br>";
-            echo("Email: " . $this->getEmail() ) "<br>";
-            echo("Password: " . $this->getPassword() ) "<br>";
+            echo "ID Empleado: " . $this->getID_Empleado() . "<br>"; 
+            echo "Cargo: " . $this->getCargo() . "<br>";
+            echo "Email: " . $this->getEmail() . "<br>";
+            echo "Password: " . $this->getPassword() . "<br>";
         }
 
         function RegistrarCuenta($Datos){
             $cuenta = new Cuenta();
             $this->ID_Empleado = $DatoS[1];
-            $db = new BaseDeDatos();
-            $con = db->getConexion();
-            $stat = con->prepare('SELECT * FROM Personal WHERE ID_Empleado = $ID_Empleado');
+            $db = new BaseDatos();
+            $con = $db->getConexion();
+            $stat = $con->prepare('SELECT * FROM Personal WHERE ID_Empleado = $ID_Empleado');
             $stat->execute();
             $query = $stat->fecthAll();
             if( count($query) != 0){

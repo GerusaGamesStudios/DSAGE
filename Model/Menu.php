@@ -10,7 +10,7 @@
         function getAllProductosBd(){
             try {
                 $conexion  = $this->db->getConexion();
-                $stat = $conexion->prepare('SELECT * FROM cuentas');
+                $stat = $conexion->prepare('SELECT * FROM productos');
                 $stat->execute();
                 $result = $stat->fetchAll();
             } catch (PDOException $e) {
