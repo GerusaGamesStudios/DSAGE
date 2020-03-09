@@ -1,6 +1,10 @@
 <?php
     class Promociones{
-        $nombre; 
+        private $nombre;
+        function __construct($nombre)
+        {
+            $this->nombre = $nombre;
+        }
         
     }
 ?>
