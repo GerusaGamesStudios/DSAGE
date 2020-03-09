@@ -58,7 +58,7 @@
 
         function RegistrarCuenta($Datos){
             $cuenta = new Cuenta();
-            $this->ID_Empleado = Dato[1];
+            $this->ID_Empleado = $DatoS[1];
             $db = new BaseDeDatos();
             $con = db->getConexion();
             $stat = con->prepare('SELECT * FROM Personal WHERE ID_Empleado = $ID_Empleado');
@@ -69,7 +69,10 @@
             }else{
                 $this->email = $Datos[0];
                 $this->password = $Datos[2];
-                $cuenta = new Cuenta(getID_Empleado, cuenta[0], getEmail, getPassword);
+                $this->
+                $cuenta = new Cuenta($this->getID_Empleado(), cuenta[0], $this->getEmail(), $this->getPassword());
+                $stat = con->prepare('INSERT INTO Personal ($this->getID_Empleado(), $this->getCargo() ) VALUES ('','');');
+                $stat->execute();
                 return $cuenta;
             }
         }
