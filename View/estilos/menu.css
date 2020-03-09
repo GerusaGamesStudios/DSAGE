@@ -14,3 +14,13 @@
     height: 90px;
     width: 100%;
 }
+.producto{
+    width: 20%;
+    padding: 20px;;
+}
+.producto .imagen{
+    width: 100%;
+}
+.producto img{
+    max-width: 100%;
+}
