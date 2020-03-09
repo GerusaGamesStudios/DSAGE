@@ -1,4 +1,5 @@
 <?php
+include (dirname(__DIR__)."/Services/BaseDeDatos.php");
     class Producto{
         private $ID_Producto;
         private $NombreProducto;
@@ -43,7 +44,7 @@
             $this->Precio = $Precio;
         }
     
-        function setDescripción( $Descripción) {
+        function setDescripción($Descripción) {
             $this->Descripción = $Descripción;
         }
         function VisualizarCuenta(){
@@ -51,6 +52,21 @@
             echo("Nombre Producto " . $this->getNombreProducto());
             echo("Precio " . $this->getPrecio());
             echo("Preparación " . $this->get_Preparacion());
+        }
+        function AddProducto($ID_Producto, $NombreProducto, $Precio,  $Descripción){
+            $newProd = new Producto($ID_Producto, $NombreProducto, $Precio,  $Descripción);
+            $db = new BaseDatos('localhost:3307','maya','utf8','root','');
+            $query = '';
+            try {
+                $conexion  = $db->getConexion();
+                $stat = $conexion->prepare('INSERT INTO productos (NOMBRE, PRECIO, DESCRIPCION, PREPARACION, TIPO) VALUES('.$query . ');');
+                $stat->execute();
+                $result = $stat->fetchAll();
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
+
+            return $result;
         }
     }   
 ?>
