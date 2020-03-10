@@ -16,10 +16,10 @@ $productos = $m->getAllProductosBd();
                 </div>
                 <div class="info">
                     <h1><?php echo $producto["NOMBRE"]?></h1>
-                    <h3><?php echo $producto["DESCRIPCION"]?></h3>
+                    <h2><?php echo $producto["DESCRIPCION"]?></h2>
+                    <h3> <?php echo $producto["PRECIO"]?>  MXN </h3>
+                    <h4><?php echo $producto["TIPO"]?></h4>
                 </div>
-                    <h2> <?php echo $producto["PRECIO"]?>  MXN </h2>
-                    <h3><?php echo $producto["TIPO"]?></h3>
             </div>
         <?php endforeach?>
         </div>

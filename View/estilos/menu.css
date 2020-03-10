@@ -15,12 +15,48 @@
     width: 100%;
 }
 .producto{
+    border-radius: 15px !important;
+    margin: 20px;
     width: 20%;
-    padding: 20px;;
+    position: relative;
+    overflow: hidden;
 }
 .producto .imagen{
     width: 100%;
+    height: 100%;
 }
 .producto img{
-    max-width: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.producto .info{
+    position: absolute;
+    padding: 10px;
+    bottom: 0;
+    left: 5;
+}
+.producto h1,h2,h3,h4{
+    font-family: 'Roboto', Helvetica, sans-serif;
+    color: #f2f2f2;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+.producto h1{
+    font-size: 24px;
+    font-weight: 600;
+}
+.producto h2{
+    font-size: 18px;
+    font-weight: 500;
+}
+.producto h3{
+    font-size: 16px;
+    font-weight: 400;
+}
+.producto h4{
+    width: 100%;
+    text-align: right;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 300;
 }

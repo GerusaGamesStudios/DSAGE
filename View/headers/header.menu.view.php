@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../estilos/menu.css">
     <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
     <title>Mayahuel</title>
 </head>
 <body>
