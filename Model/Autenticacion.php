@@ -27,7 +27,7 @@
                 $stat->execute(array('id'=>$usuario,'ps'=>$contraseña));
                 $result = $stat->fetchAll();
                 if($result){
-
+                    var_dump($result);
                 }
                 return $result;
             } catch (PDOException $e) {
