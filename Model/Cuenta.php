@@ -71,10 +71,23 @@
                 $this->password = $Datos[2];
                 $this->
                 $cuenta = new Cuenta($this->getID_Empleado(), cuenta[0], $this->getEmail(), $this->getPassword());
-                $stat = con->prepare('INSERT INTO Personal ($this->getID_Empleado(), $this->getCargo() ) VALUES ('','');');
-                $stat->execute();
+                $cuenta->AñadirCuenta();
                 return $cuenta;
             }
+        }
+
+        function AñadirCuenta(){
+            $db = new BaseDatos();
+            $con = $db->getConexion();
+            $stat = con->prepare( "INSERT INTO cuentas (ID_Empleado,Cargo,Email,Password) VALUES ('$this->getID_Empleado()','$this->getCargo()','$this->getEmail()','$this->getPassword()' );" );
+            $stat->execute();
+        }
+
+        function EliminarCuenta($IdDelete){
+            $db new BaseDatos();
+            $con = $db->getConexion();
+            $stat = con->prepare("DELETE FROM cuentas WHERE ID_Empleado = IdDelete");
+            $sta5->execute();
         }
     }
 ?>
