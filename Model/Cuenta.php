@@ -83,10 +83,10 @@
         }
 
         function EliminarCuenta(){
-            $db new BaseDatos();
+            $db = new BaseDatos();
             $con = $db->getConexion();
             $stat = con->prepare("DELETE FROM cuentas WHERE ID_Empleado = '$this->getID_Empleado' ");
-            $sta5->execute();
+            $stat->execute();
         }
     }
 ?>

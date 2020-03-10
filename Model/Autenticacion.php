@@ -1,7 +1,11 @@
 <?php
+    include (dirname(__DIR__)."/Services/BaseDeDatos.php");
     class Autenticacion{
         //Constructor
-        function __construct(){}   
+        private  $db;
+        function __construct(){
+            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+        }   
 
         function getAllCuentasBd(){
             try {
@@ -13,6 +17,14 @@
                 echo $e->getMessage();
             }
             return $result;
+        }
+
+        function iniciarSesion($usuario,$contraseña){
+            try {
+                $conexion = $this->db->getConexion();
+            } catch (PDOStatement $e) {
+                echo $e->getMessage();
+            }
         }
     }
 ?>

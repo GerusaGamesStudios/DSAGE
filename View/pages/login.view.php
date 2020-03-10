@@ -1,5 +1,6 @@
 <?php
-
+    include (dirname(__DIR__)."../../Model/Menu.php");
+    
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         $usuario = $_POST['user'];
         $contraseña = $_POST['contra'];
@@ -9,6 +10,9 @@
 ?>
 
 <main>
+    <div class="headSpace">
+
+    </div>
     <section>
         <div class="loginReg">
             <form action="">
