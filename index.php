@@ -5,6 +5,6 @@ require 'View/footers/footer.view.php';
 
 /*require 'Model/Cuenta.php';
 $cuenta = new Cuenta();
-$array = ;
+$array = array("12345", "Mesero", "luish_991@hotmail.com", "wordless");
 $cuenta->RegistrarCuenta($array);*/
 ?>

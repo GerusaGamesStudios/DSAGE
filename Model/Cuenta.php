@@ -57,19 +57,18 @@
         }
 
         function RegistrarCuenta($Datos){ //Recibe arreglo con los datos para crear la cuenta
-            $cuenta = new Cuenta();
-            $this->ID_Empleado = $DatoS[1];
+            $this->ID_Empleado = $Datos[1];
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $con = $db->getConexion();
-            $stat = $con->prepare("SELECT * FROM Personal WHERE ID_Empleado = '$this->getID_Empleado()' ");
+            $stat = $con->prepare("SELECT * FROM personal WHERE ID_Empleado = '$this->getID_Empleado()' ");
             $stat->execute();
-            $query = $stat->fecthAll();
+            $query = $stat->fetchAll();
             if( count($query) != 0){
                 return null;
             }else{
                 $this->email = $Datos[0];
                 $this->password = $Datos[2];
-                $cuenta = new Cuenta($this->getID_Empleado(), cuenta[3], $this->getEmail(), $this->getPassword());
+                $cuenta = new Cuenta( $this->getID_Empleado(), $Datos[3], $this->getEmail(), $this->getPassword(), $this->getPassword() );
                 $cuenta->AñadirCuenta();
                 return $cuenta;
             }
@@ -78,15 +77,15 @@
         function AñadirCuenta(){
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $con = $db->getConexion();
-            $stat = con->prepare( "INSERT INTO cuentas (ID_Empleado,Cargo,Email,Password) VALUES ('$this->getID_Empleado()','$this->getCargo()','$this->getEmail()','$this->getPassword()' );" );
+            $stat = $con->prepare( "INSERT INTO cuentas (ID_Empleado,Cargo,Email,Contra) VALUES ('$this->getID_Empleado()','$this->getCargo()','$this->getEmail()','$this->getPassword()' );" );
             $stat->execute();
         }
 
         function EliminarCuenta(){
-            $db new BaseDatos('localhost:3306','maya','utf8','root','');
+            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $con = $db->getConexion();
-            $stat = con->prepare("DELETE FROM cuentas WHERE ID_Empleado = '$this->getID_Empleado' ");
-            $sta5->execute();
+            $stat = $con->prepare("DELETE FROM cuentas WHERE ID_Empleado = '$this->getID_Empleado' ");
+            $stat->execute();
         }
     }
 ?>
