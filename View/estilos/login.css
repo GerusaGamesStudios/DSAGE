@@ -1,0 +1,32 @@
+.headSpace{
+    height: 12vh;
+    min-height: 100px;
+}
+section{
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+section .loginReg{
+    width: 80%;
+    margin: auto;
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.loginReg input[type="text"]{
+    width: 100%;
+    padding: 15px;
+}
+.loginReg input[type="submit"]{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    color: #f2f2f2;
+    background-color: #443730;
+    border-radius: 15px;
+    border-style: none;
+}

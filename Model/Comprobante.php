@@ -1,17 +1,14 @@
 <?php
     class Comprobante{
 
-        private $Orden orden;
+        private  $orden;
         private $subtotal;
         private $PrecioTotal;
         private $FechaHora;
 
-        function __construct ()
-        {
+        function __construct (){}
 
-        }
-
-        function Comprobante (Orden orden, subtotal, PrecioTotal, FechaHora )
+        function Comprobante ($orden, $subtotal, $PrecioTotal, $FechaHora )
         {
             $this->orden = $orden;
             $this->subtotal = $subtotal;
@@ -19,7 +16,7 @@
             $this->FechaHora = $FechaHora;
         }
 
-        function Orden getOrden ()
+        function getOrden ()
         {
             return $this->orden;
         }
@@ -39,24 +36,24 @@
             return $this->FechaHora;
         }
 
-        function setOrden ()
+        function setOrden ($neworden)
         {
-            $this->orden = $orden;
+            $this->orden = $neworden;
         }
 
-        function setSubtotal()
+        function setSubtotal($newsub)
         {
-            $this->subtotal = $subtotal;
+            $this->subtotal = $newsub;
         }
 
-        function setPrecioTotal ()
+        function setPrecioTotal ($newprice)
         {
-            $this->PrecioTotal = $PrecioTotal;
+            $this->PrecioTotal = $newprice;
         }
 
-        function setFechaHora ()
+        function setFechaHora ($newfecha)
         {
-            $this->FechaHora = $FechaHora;
+            $this->FechaHora = $newfecha;
         }
 
         function GenerarComprobante ()

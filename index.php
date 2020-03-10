@@ -1,10 +1,5 @@
 <?php
-require 'View/headers/header.index.php';
-require 'View/pages/index.view.php';
-require 'View/footers/footer.view.php';
-
-/*require 'Model/Cuenta.php';
-$cuenta = new Cuenta();
-$array = array("12345", "Mesero", "luish_991@hotmail.com", "wordless");
-$cuenta->RegistrarCuenta($array);*/
+    require 'View/headers/header.index.php';
+    require 'View/pages/index.view.php';
+    require 'View/footers/footer.view.php';
 ?>
