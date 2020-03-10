@@ -4,7 +4,7 @@
         private $db;
         function __construct()
         {
-            $this->db = new BaseDatos('localhost:3307','maya','utf8','root','');
+            $this->db = new BaseDatos('localhost:3306','maya','utf8','root','');
             echo "base de datos abierta \n";
         }
         function getAllProductosBd(){
@@ -16,7 +16,6 @@
             } catch (PDOException $e) {
                 echo $e->getMessage();
             }
-
             return $result;
         }
     }
