@@ -56,12 +56,12 @@
             echo "Password: " . $this->getPassword() . "<br>";
         }
 
-        function RegistrarCuenta($Datos){
+        function RegistrarCuenta($Datos){ //Recibe arreglo con los datos para crear la cuenta
             $cuenta = new Cuenta();
             $this->ID_Empleado = $DatoS[1];
-            $db = new BaseDatos();
+            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $con = $db->getConexion();
-            $stat = $con->prepare('SELECT * FROM Personal WHERE ID_Empleado = $ID_Empleado');
+            $stat = $con->prepare("SELECT * FROM Personal WHERE ID_Empleado = '$this->getID_Empleado()' ");
             $stat->execute();
             $query = $stat->fecthAll();
             if( count($query) != 0){
@@ -76,14 +76,14 @@
         }
 
         function AñadirCuenta(){
-            $db = new BaseDatos();
+            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $con = $db->getConexion();
             $stat = con->prepare( "INSERT INTO cuentas (ID_Empleado,Cargo,Email,Password) VALUES ('$this->getID_Empleado()','$this->getCargo()','$this->getEmail()','$this->getPassword()' );" );
             $stat->execute();
         }
 
         function EliminarCuenta(){
-            $db = new BaseDatos();
+            $db new BaseDatos('localhost:3306','maya','utf8','root','');
             $con = $db->getConexion();
             $stat = con->prepare("DELETE FROM cuentas WHERE ID_Empleado = '$this->getID_Empleado' ");
             $stat->execute();

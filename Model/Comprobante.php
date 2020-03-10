@@ -1,7 +1,7 @@
 <?php
     class Comprobante{
 
-        private $Orden orden;
+        private  $orden;
         private $subtotal;
         private $PrecioTotal;
         private $FechaHora;

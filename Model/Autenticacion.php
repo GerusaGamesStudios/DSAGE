@@ -22,7 +22,11 @@
         function iniciarSesion($usuario,$contraseña){
             try {
                 $conexion = $this->db->getConexion();
-            } catch (PDOStatement $e) {
+                $stat = $conexion->prepare('SELECT * FROM cuentas WHERE ID_Empleado = :id AND Contra = :ps LIMIT 1');
+                $stat->execute(array('id'=>$usuario,'ps'=>$contraseña));
+                $result = $stat->fetchAll();
+                return $result;
+            } catch (PDOException $e) {
                 echo $e->getMessage();
             }
         }
