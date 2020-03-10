@@ -69,8 +69,7 @@
             }else{
                 $this->email = $Datos[0];
                 $this->password = $Datos[2];
-                $this->
-                $cuenta = new Cuenta($this->getID_Empleado(), cuenta[0], $this->getEmail(), $this->getPassword());
+                $cuenta = new Cuenta($this->getID_Empleado(), cuenta[3], $this->getEmail(), $this->getPassword());
                 $cuenta->AñadirCuenta();
                 return $cuenta;
             }
@@ -83,10 +82,10 @@
             $stat->execute();
         }
 
-        function EliminarCuenta($IdDelete){
+        function EliminarCuenta(){
             $db new BaseDatos();
             $con = $db->getConexion();
-            $stat = con->prepare("DELETE FROM cuentas WHERE ID_Empleado = IdDelete");
+            $stat = con->prepare("DELETE FROM cuentas WHERE ID_Empleado = '$this->getID_Empleado' ");
             $sta5->execute();
         }
     }
