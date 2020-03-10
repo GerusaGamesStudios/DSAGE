@@ -6,6 +6,11 @@ $productos = $m->getAllProductosBd();
 <div class="headSpace">
 
 </div>
+<div class="btnCarrito">
+    <div id="btnCarrito">
+        <i class="fas fa-cart-plus"></i>
+    </div>
+</div>
 <section>
     <div class="secCont">
         <div class="menuPrincipal">
