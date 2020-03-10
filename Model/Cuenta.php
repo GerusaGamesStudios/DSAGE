@@ -1,20 +1,20 @@
 <?php
 
-    require "../Servicios/BaseDeDatos.php";
+    include (dirname(__DIR__)."/Services/BaseDeDatos.php");
     class Cuenta{
         private $ID_Empleado;
         private $Cargo;
         private $email;
-        private $password;
-        private $rpassword;
-        //Constructor
+        private $contra;
+        private $rcontra;
+        //Constructor's
         function __construct($ID, $Cargo, $email, $password, $rpassword)
         {
             $this->ID_Empleado = $ID;
             $this->Cargo = $Cargo;
             $this->email = $email;
-            $this->password = $password;
-            $this->rpassword = $rpassword;
+            $this->contra = $password;
+            $this->rcontra = $rpassword;
         }
         //Getter's
         function getID_Empleado(){
@@ -30,7 +30,7 @@
         }
 
         function getPassword(){
-            return $this->password;
+            return $this->contra;
         }
         //Setter's
         function setID_Empleado($NewID){
@@ -46,7 +46,7 @@
         }
 
         function setPassword($NewPassword){
-            $this->password = $NewPassword;
+            $this->contra = $NewPassword;
         }
 
         function VisualizarCuenta(){
@@ -60,7 +60,7 @@
             $this->ID_Empleado = $Datos[1];
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $con = $db->getConexion();
-            $stat = $con->prepare("SELECT * FROM personal WHERE ID_Empleado = '$this->getID_Empleado()' ");
+            $stat = $con->prepare("SELECT * FROM personal WHERE ID_Empleado = '$this->ID_Empleado' ");
             $stat->execute();
             $query = $stat->fetchAll();
             if( count($query) != 0){
@@ -77,8 +77,13 @@
         function AñadirCuenta(){
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $con = $db->getConexion();
-            $stat = $con->prepare( "INSERT INTO cuentas (ID_Empleado,Cargo,Email,Contra) VALUES ('$this->getID_Empleado()','$this->getCargo()','$this->getEmail()','$this->getPassword()' );" );
+            $stat = $con->prepare( "INSERT INTO cuentas (ID_Empleado,Cargo,Email,Contra) VALUES ( '$this->ID_Empleado','$this->Cargo','$this->email','$this->contra' );" ); 
             $stat->execute();
+            if($stat){ 
+                echo('Cuenta agregada!');
+            }else{
+                echo('Error de agregacion!');
+            }
         }
 
         function EliminarCuenta(){
