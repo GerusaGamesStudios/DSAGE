@@ -89,8 +89,13 @@
         function EliminarCuenta(){
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $con = $db->getConexion();
-            $stat = $con->prepare("DELETE FROM cuentas WHERE ID_Empleado = '$this->getID_Empleado' ");
+            $stat = $con->prepare("DELETE FROM cuentas WHERE ID_Empleado = '$this->ID_Empleado' ");
             $stat->execute();
+            if($stat){ 
+                echo('Cuenta eliminada!');
+            }else{
+                echo('Error de eliminacion!');
+            }
         }
     }
 ?>
