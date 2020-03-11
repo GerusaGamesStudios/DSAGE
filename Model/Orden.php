@@ -34,4 +34,10 @@
             return $this->TiempoEspera;
         }
     }
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $productos = $_GET['productos'];
+        $numMesa = $_GET['numesa'];
+        
+    }
 ?>
