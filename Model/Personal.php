@@ -147,5 +147,10 @@
             echo("Teléfono: ".$this->get_telefono(). '<br>');
             echo("Dirección: ".$this->get_direccion(). '<br>');
         }
+
+        function AddPersonal ()
+        {
+
+        }
     }      
 ?>
