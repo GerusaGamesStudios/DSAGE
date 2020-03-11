@@ -62,7 +62,7 @@
 
         function get_horario ()
         {
-            return $thi->horario;
+            return $this->horario;
         }
 
         function get_telefono ()
@@ -95,7 +95,7 @@
         
         function set_apellidop ($apellidop)
         {
-            $this->apellidop = $apelidop;
+            $this->apellidop = $apellidop;
         }
 
         
@@ -146,6 +146,11 @@
             echo("Horario: ".$this->get_horario());
             echo("Teléfono: ".$this->get_telefono(). '<br>');
             echo("Dirección: ".$this->get_direccion(). '<br>');
+        }
+
+        function AddPersonal ()
+        {
+
         }
     }      
 ?>
