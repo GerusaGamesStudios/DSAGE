@@ -8,6 +8,7 @@
 .secCont{
     min-height: 100vh;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 .headSpace{
@@ -109,4 +110,8 @@
     padding: 20px;
     background-color: #c2c2c2;
     min-height: 50px;
+}
+.elementoCarito{
+    padding: 20px;
+    background-color: #000000;
 }

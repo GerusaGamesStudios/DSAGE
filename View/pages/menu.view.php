@@ -35,7 +35,9 @@ $productos = $m->getAllProductosBd();
         </div>
 
         <div id="carritoCompras">
-            
+            <div class="elementoCarito">
+
+            </div>
         </div>
     </div>
 </section>
