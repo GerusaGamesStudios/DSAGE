@@ -62,7 +62,7 @@
 
         function get_horario ()
         {
-            return $thi->horario;
+            return $this->horario;
         }
 
         function get_telefono ()
@@ -95,7 +95,7 @@
         
         function set_apellidop ($apellidop)
         {
-            $this->apellidop = $apelidop;
+            $this->apellidop = $apellidop;
         }
 
         
