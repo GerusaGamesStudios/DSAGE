@@ -96,7 +96,7 @@ include (dirname(__DIR__)."/Services/BaseDeDatos.php");
             return $result;
         }
 
-        function BuscarProducto($codigo){
+        static function BuscarProducto($codigo){
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             try {
                 $conexion  = $db->getConexion();
@@ -109,4 +109,10 @@ include (dirname(__DIR__)."/Services/BaseDeDatos.php");
             return $result;
         }
     }   
+
+    if($_SERVER['REQUEST_METHOD'] == "GET"){
+        $idProducto = $_GET['idprod'];
+        $producto = Producto::BuscarProducto($idProducto);
+        echo json_encode($producto);
+    }
 ?>
