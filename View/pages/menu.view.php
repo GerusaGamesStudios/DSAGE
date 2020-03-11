@@ -18,7 +18,7 @@ $productos = $m->getAllProductosBd();
             <div class="producto">
                 <div class="btnAgreagar">
                     <div id="btnCarrito">
-                        
+                        <i class="fas fa-plus-circle"></i>
                     </div>
                 </div>
                 <div class="imagen">

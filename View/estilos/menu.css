@@ -86,3 +86,8 @@
 .btnCarrito i{
     color: #f2f2f2;
 }
+.btnAgreagar{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
