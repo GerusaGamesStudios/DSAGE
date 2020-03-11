@@ -93,8 +93,21 @@ include (dirname(__DIR__)."/Services/BaseDeDatos.php");
             } catch (PDOException $e) {
                 echo $e->getMessage();
             }
-
             return $result;
+        }
+
+        function BuscarProducto($codigo){
+            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            try {
+                $conexion  = $db->getConexion();
+                $stat = $conexion->prepare("SELECT * FROM productos WHERE idProducto = '$codigo' ");
+                $stat->execute();
+                $result = $stat->fetchAll();
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
+            return $result;
+        }
         }
     }   
 ?>
