@@ -1,39 +1,13 @@
 <?php
     class GestorOrden
     {
-        $Orden orden;
+        private $orden = new Orden();
+        function __construct (){}
 
-        function __construct ()
+        function producto2Orden ($producto)
         {
-
+            array_push($this->orden->productos,$producto);
+            $this->orden->NumProductos = $this->orden->NumProductos + 1;
         }
-
-        function añadir_orden ()
-        {
-            $completa = FALSE;
-            $id;
-            $orden = orden();
-            $orden_producto Productos = Orden_Producto();
-
-            do{
-                echo "Ingresa el ID del producto que deseas añadir \n";
-                //lectura del ID
-                Productos->AgregarPorID(id);
-                echo "¿Deseas añadir otro prodcuto?";
-                //lectura de la resp
-                
-                //Validacion de la orden  
-            } while (!completa)
-                orden->RealizarOrden(Productos);
-                echo "Orden añadida con éxito, tiempo de espera aporximado: \n".$orden.getEspera();
-                $orden->VisualizaOrden(Productos);
-            
-        }
-
-        function Menu ()
-        {
-            
-        }
-
     }
 ?>

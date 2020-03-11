@@ -1,5 +1,5 @@
 <?php
-    class FabricaBeidas extends FabricaAbstractaProducto{
+    class FabricaBebidas extends FabricaAbstractaProducto{
         
     }
 ?>
