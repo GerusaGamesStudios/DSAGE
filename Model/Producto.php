@@ -108,6 +108,5 @@ include (dirname(__DIR__)."/Services/BaseDeDatos.php");
             }
             return $result;
         }
-        }
     }   
 ?>
