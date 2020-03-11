@@ -5,6 +5,5 @@ $(document).ready(function(){
         var idElemento = $(this).data('idprod');
         alert("botonCarrito: " + idElemento);
         elementosCarrito.push(idElemento);
-        console.log(elementosCarrito);
     });
 });

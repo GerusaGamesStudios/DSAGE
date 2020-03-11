@@ -33,6 +33,10 @@ $productos = $m->getAllProductosBd();
             </div>
         <?php endforeach?>
         </div>
+
+        <div id="carritoCompras">
+            
+        </div>
     </div>
 </section>
 <script src="../../Controller/jquery.js"></script>
