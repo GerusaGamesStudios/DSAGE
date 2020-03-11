@@ -1,5 +1,10 @@
 $(document).ready(function(){
+    var elementos = 0;
+    var elementosCarrito = [];
     $(document).on('click','#btnCarrito',function(){
-        alert("botonCarrito");
+        var idElemento = $(this).data('idprod');
+        alert("botonCarrito: " + idElemento);
+        elementosCarrito.push(idElemento);
+        console.log(elementosCarrito);
     });
 });

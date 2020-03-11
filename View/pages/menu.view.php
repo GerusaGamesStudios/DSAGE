@@ -17,8 +17,8 @@ $productos = $m->getAllProductosBd();
         <?php foreach($productos as $producto):?>
             <div class="producto">
                 <div class="btnAgreagar">
-                    <div id="btnCarrito">
-                        <i class="fas fa-plus-circle"></i>
+                    <div id="btnCarrito" data-idprod="<?php echo $producto["idPRODUCTO"]?>">
+                        <i class="fas fa-cart-plus"></i>
                     </div>
                 </div>
                 <div class="imagen">
