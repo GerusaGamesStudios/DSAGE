@@ -196,7 +196,6 @@
                 echo $e->getMessage();
             }
             return $result;
-s
         }
     }      
 ?>
