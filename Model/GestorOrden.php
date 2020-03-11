@@ -13,12 +13,18 @@
                 echo $e->getMessage();
             }
             //Pasando cada registro al array de ordenes
+            $vec = [];
             while ($reg=mysqli_fetch_array($result))
             {
-              array_push($this->ArrayOrdenes, $reg);
+                $vec[] = $reg;
+                $IDs = array();
+                foreach($vec as $producto){
+                    array_push($IDs,$producto["idProducto"]);
+                }
+                $orden = new Orden($IDs,$reg["mesa"]);
+                array_push($this->ArrayOrdenes, $orden);
             }
         }
-
         function getOrdenes(){
             return $this->ArrayOrdenes;
         }

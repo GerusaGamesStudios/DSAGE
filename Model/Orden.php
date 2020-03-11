@@ -2,6 +2,7 @@
     require 'Model/Producto.php';
     class Orden{
         private $productos = array();
+        private $ID_Orden;
         private $TiempoEspera;
         private $mesa;
         function __construct($productosJS, $mesa)
@@ -30,8 +31,14 @@
         function getOrden(){
             return $this->productos;
         }
+        function getID_Orden(){
+            return $this->ID_Orden;
+        }
         function getTiempoEspera(){
             return $this->TiempoEspera;
+        }
+        function getMesa(){
+            return $this->mesa;
         }
     }
 
