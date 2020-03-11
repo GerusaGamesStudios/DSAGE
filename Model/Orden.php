@@ -1,15 +1,14 @@
 <?php
+    require 'Model/Producto.php';
     class Orden{
         private $productos = array();
         private $NumProductos;
-        function __construct()
+        private $TiempoEspera;
+        function __construct($productosJS)
         {
+            foreach($productosJS as $producto){
 
-        }
-        function productoAOrden ($producto)
-        {
-            array_push($this->productos,$producto);
-            $this->NumProductos = $this->NumProductos + 1;
+            }
         }
     }
 ?>
