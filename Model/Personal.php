@@ -150,7 +150,7 @@
 
         function AddPersonal ()
         {
-            $db 0 new BaseDatos('localhost:3306', 'maya', 'utf8', 'roor', '');
+            $db = new BaseDatos('localhost:3306', 'maya', 'utf8', 'root', '');
             try
             {
                 $conexion = $db->getConexion();
@@ -168,14 +168,14 @@
 
         function EliminarPersonal ()
         {
-            $db = new BaseDatos('localhost:3306','maya', 'utf8', 'roor', '');
+            $db = new BaseDatos('localhost:3306','maya', 'utf8', 'root', '');
             try
             {
                 $conexion = $db->getConexion();
                 $stat = $conexion->prepare("SELECT * FROM personal WHERE RFC = '$this->rfc'");
                 $stat->execute();
                 $result = $stat->fetchAll();
-            } catch
+            } catch (PDOException $e)
             {
                 echo $e->getMessage();
             }
@@ -191,9 +191,9 @@
                 $stat = $conexion->prepare("SELECT * FROM personal WHERE RFC = '$id'");
                 $stat->execute();
                 $result = $stat->fetchAll();
-            } catch
+            } catch (PDOException $e)
             {
-                echo $e->getMenssage();
+                echo $e->getMessage();
             }
             return $result;
 
