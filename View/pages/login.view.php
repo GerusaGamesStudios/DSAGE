@@ -1,11 +1,11 @@
 <?php
-    include (dirname(__DIR__)."../../Model/Menu.php");
+    include (dirname(__DIR__)."../../Model/Autenticación.php");
     
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         $usuario = $_POST['user'];
         $contraseña = $_POST['contra'];
-
-
+        $auth = new Autenticacion();
+        $auth->iniciarSesion($usuario,$contraseña);
         }
 ?>
 

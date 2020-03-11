@@ -16,6 +16,11 @@ $productos = $m->getAllProductosBd();
         <div class="menuPrincipal">
         <?php foreach($productos as $producto):?>
             <div class="producto">
+                <div class="btnAgreagar">
+                    <div id="btnCarrito">
+                        
+                    </div>
+                </div>
                 <div class="imagen">
                     <img src="https://source.unsplash.com/random/200x200" alt="" srcset="">
                 </div>
@@ -30,3 +35,6 @@ $productos = $m->getAllProductosBd();
         </div>
     </div>
 </section>
+<script src="../../Controller/jquery.js"></script>
+<script src="../../Controller/menuController.js">
+</script>
