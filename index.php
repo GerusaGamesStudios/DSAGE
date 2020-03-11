@@ -5,5 +5,4 @@
 
     //Prueba para Añadir cuenta a la DB;;;
       require 'Model/Comprobante.php';
-      $p = new Comprobante();
 ?>
