@@ -75,7 +75,7 @@
         }
 
         function AñadirCuenta(){
-            $db = new BaseDatos('localhost:3307','maya','utf8','root','');
+            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $con = $db->getConexion();
             $stat = $con->prepare( "INSERT INTO cuentas (ID_Empleado,Cargo,Email,Contra) VALUES ( '$this->ID_Empleado','$this->Cargo','$this->email','$this->contra' );" ); 
             $stat->execute();

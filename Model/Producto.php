@@ -55,7 +55,7 @@ include (dirname(__DIR__)."/Services/BaseDeDatos.php");
         }
         function AddProducto($ID_Producto, $NombreProducto, $Precio,  $Descripción){
             $newProd = new Producto($ID_Producto, $NombreProducto, $Precio,  $Descripción);
-            $db = new BaseDatos('localhost:3307','maya','utf8','root','');
+            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $query = '';
             try {
                 $conexion  = $db->getConexion();
