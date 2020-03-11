@@ -6,11 +6,11 @@
         private $PrecioTotal;
         private $FechaHora;
 
-        function __construct ($norden)
+        function __construct ($orden)
         {
-            $this->orden = $norden;
+            $this->orden = $orden;
             date_default_timezone_set('America/Mexico_City'); //configuro un nuevo timezone
-            $this->FechaHora = 'Fecha/hora actual: '. date('Y-m-d h:i:s', time());;
+            $this->FechaHora = 'Fecha/hora actual: '. date('Y-m-d h:i:s'. time());
             echo($this->FechaHora);
         }
 
