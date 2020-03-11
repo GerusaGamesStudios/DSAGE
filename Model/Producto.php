@@ -6,12 +6,15 @@ include (dirname(__DIR__)."/Services/BaseDeDatos.php");
         private $Precio;
         private $Descripción;
         private $preparacion;
+        private $tipo;
         //Constructor's
-        function __construct($ID_Producto, $NombreProducto, $Precio,  $Descripción) {
+        function __construct($ID_Producto, $NombreProducto, $Precio,  $Descripción, $Preparacion, $tipo) {
             $this->ID_Producto = $ID_Producto;
             $this->NombreProducto = $NombreProducto;
             $this->Precio = $Precio;
             $this->Descripción = $Descripción;
+            $this->preparacion = $Preparacion;
+            $this->tipo = $tipo;
         }
         function getID_Producto() {
             return $this->ID_Producto;
@@ -47,19 +50,19 @@ include (dirname(__DIR__)."/Services/BaseDeDatos.php");
         function setDescripción($Descripción) {
             $this->Descripción = $Descripción;
         }
-        function VisualizarCuenta(){
+        function VisualizarProducto(){
             echo("Id producto " . $this->getID_Producto());
             echo("Nombre Producto " . $this->getNombreProducto());
             echo("Precio " . $this->getPrecio());
             echo("Preparación " . $this->get_Preparacion());
         }
-        function AddProducto($ID_Producto, $NombreProducto, $Precio,  $Descripción){
-            $newProd = new Producto($ID_Producto, $NombreProducto, $Precio,  $Descripción);
-            $db = new BaseDatos('localhost:3307','maya','utf8','root','');
+        function AddProducto($ID_Producto, $NombreProducto, $Precio,  $Descripción, $Preparacion, $tipo){
+            $newProd = new Producto($ID_Producto, $NombreProducto, $Precio,  $Descripción,$Preparacion, $tipo);
+            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $query = '';
             try {
                 $conexion  = $db->getConexion();
-                $stat = $conexion->prepare('INSERT INTO productos (NOMBRE, PRECIO, DESCRIPCION, PREPARACION, TIPO) VALUES('.$query . ');');
+                $stat = $conexion->prepare("INSERT INTO productos (NOMBRE, PRECIO, DESCRIPCION, PREPARACION, TIPO) VALUES('$ID_Producto','$NombreProducto','$Precio','$Descripción','$Preparacion','$tipo');");
                 $stat->execute();
                 $result = $stat->fetchAll();
             } catch (PDOException $e) {
