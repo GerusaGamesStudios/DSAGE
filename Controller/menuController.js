@@ -11,6 +11,7 @@ $(document).ready(function(){
             data: {"idprod":idElemento},
             success: function (response) {
                 alert(response);
+                var elemento = JSON.parse(response);
             }
         });
     });
