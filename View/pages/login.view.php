@@ -1,5 +1,5 @@
 <?php
-    include (dirname(__DIR__)."../../Model/Autenticación.php");
+include (dirname(__DIR__)."../../Model/Autenticacion.php");
     
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         $usuario = $_POST['user'];

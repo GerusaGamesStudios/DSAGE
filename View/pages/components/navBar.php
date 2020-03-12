@@ -4,9 +4,9 @@
     </div>
     <nav>
         <ul>
-            <li><a href="">Menú</a></li>
+            <li><a href="../routes/Menu.php">Menú</a></li>
             <li><a href="">Reservación</a></li>
-            <li><a href="">Ingreso</a></li>
+            <li><a href="../routes/login.php">Ingreso</a></li>
         </ul>
     </nav>
 </Header>
