@@ -96,7 +96,7 @@
                 echo $e->getMessage();
             }
         }
-        function BuscarCuenta ($id)
+        static function BuscarCuenta ($id)
         {
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             try
