@@ -1,5 +1,9 @@
 <?php
-    class FabricaBebidas extends FabricaAbstractaProducto{
-        
+    require 'Model/Bebida.php';
+    class FabricaBebidas implements FabricaAbstractaProducto{
+        public function crearBebida(): Bebida
+        {
+            return new Bebida;
+        }
     }
 ?>

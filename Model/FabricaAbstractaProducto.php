@@ -1,5 +1,6 @@
 <?php
-    abstract class FabricaAbstractaProducto{
-        
+    interface FabricaAbstractaProducto{
+        public function crearPlatillo(): Platillo;
+        public function crearBebida(): Bebida;
     }
 ?>
