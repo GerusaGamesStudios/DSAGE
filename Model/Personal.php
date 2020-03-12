@@ -151,7 +151,7 @@
 
         function AddPersonal ()
         {
-            $db = new BaseDatos('localhost:3306', 'maya', 'utf8', 'root', '');
+            $db = new BaseDatos('localhost', 'maya', 'utf8', 'root', '');
             try
             {
                 $conexion = $db->getConexion();
@@ -169,7 +169,7 @@
 
         function EliminarPersonal ()
         {
-            $db = new BaseDatos('localhost:3306','maya', 'utf8', 'root', '');
+            $db = new BaseDatos('localhost','maya', 'utf8', 'root', '');
             try
             {
                 $conexion = $db->getConexion();
@@ -185,7 +185,7 @@
 
         static function BuscarPersonal ($id)
         {
-            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            $db = new BaseDatos('localhost','maya','utf8','root','');
             try
             {
                 $conexion = $db->getConexion();
@@ -200,7 +200,7 @@
         }
 
         static function getAllPersonalDB(){
-            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            $db = new BaseDatos('localhost','maya','utf8','root','');
             try
             {
                 $conexion = $db->getConexion();

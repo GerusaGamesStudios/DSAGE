@@ -18,7 +18,7 @@
         }
 
         function AddOrdenDB(){
-            $db = new BaseDatos('localhost:3307','maya','utf8','root','');
+            $db = new BaseDatos('localhost','maya','utf8','root','');
             $con = $db->getConexion();
             $stat = $con->prepare( "INSERT INTO ordenes (ID_Orden, TiempoEspera, Mesa) VALUES (null ,'$this->TiempoEspera','$this->mesa');" ); 
             $stat->execute();
