@@ -21,6 +21,10 @@ section .loginReg{
     width: 100%;
     padding: 15px;
 }
+.loginReg input[type="password"]{
+    width: 100%;
+    padding: 15px;
+}
 .loginReg input[type="submit"]{
     margin-top: 20px;
     width: 100%;

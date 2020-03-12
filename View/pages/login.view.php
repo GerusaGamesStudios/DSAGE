@@ -19,7 +19,7 @@ include (dirname(__DIR__)."../../Model/Autenticacion.php");
         <div class="loginReg">
             <form action="<?PHP ECHO $_SERVER['PHP_SELF']?>" method="POST">
                 <input type="text" placeholder="IDUsuario">
-                <input type="text" name="" id="" placeholder="Contraseña">
+                <input type="password" name="" id="" placeholder="Contraseña">
                 <input type="submit" value="verificar">
             </form>
             
