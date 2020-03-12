@@ -23,7 +23,6 @@ $p = new Personal($rfc,$nss,$nombre,$apellidop,$apellidom,$puesto,$sueldo,$horar
                 <input type="text" placeholder="Dirección">
                 <input type="submit" value="Registrar">
             </form>
-
         </div>
     </section>
 
