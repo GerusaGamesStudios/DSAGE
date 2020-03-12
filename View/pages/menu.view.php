@@ -16,6 +16,11 @@ $productos = $m->getAllProductosBd();
         <div class="menuPrincipal">
         <?php foreach($productos as $producto):?>
             <div class="producto">
+                <div class="btnAgreagar">
+                    <div id="btnCarrito" data-idprod="<?php echo $producto["idPRODUCTO"]?>">
+                        <i class="fas fa-cart-plus"></i>
+                    </div>
+                </div>
                 <div class="imagen">
                     <img src="https://source.unsplash.com/random/200x200" alt="" srcset="">
                 </div>
@@ -28,5 +33,19 @@ $productos = $m->getAllProductosBd();
             </div>
         <?php endforeach?>
         </div>
+
+        <div id="carritoCompras">
+            <!-- <div class="elementoCarrito">
+                <h2>Nombre</h2>
+                <h3>Descripcion</h3>
+                <h4>precio</h4>
+            </div> -->
+        </div>
+        <div id="crearOrden">
+            CREAR ORDEN
+        </div>
     </div>
 </section>
+<script src="../../Controller/jquery.js"></script>
+<script src="../../Controller/menuController.js">
+</script>

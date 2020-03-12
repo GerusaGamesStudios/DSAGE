@@ -1,19 +1,17 @@
 <?php
     class Comprobante{
 
-        private  $orden;
+        private $orden;
         private $subtotal;
         private $PrecioTotal;
         private $FechaHora;
 
-        function __construct (){}
-
-        function Comprobante ($orden, $subtotal, $PrecioTotal, $FechaHora )
+        function __construct ($orden)
         {
             $this->orden = $orden;
-            $this->subtotal = $subtotal;
-            $this->PrecioTotal = $PrecioTotal;
-            $this->FechaHora = $FechaHora;
+            date_default_timezone_set('America/Mexico_City'); //configuro un nuevo timezone
+            $this->FechaHora = 'Fecha/hora actual: '. date('Y-m-d h:i:s'. time());
+            echo($this->FechaHora);
         }
 
         function getOrden ()

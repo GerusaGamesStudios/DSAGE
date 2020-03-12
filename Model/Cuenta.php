@@ -75,6 +75,7 @@
         }
 
         function AñadirCuenta(){
+<<<<<<< HEAD
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $con = $db->getConexion();
             $stat = $con->prepare( "INSERT INTO cuentas (ID_Empleado,Cargo,Email,Contra) VALUES ( '$this->ID_Empleado','$this->Cargo','$this->email','$this->contra' );" ); 
@@ -83,14 +84,44 @@
                 echo('Cuenta agregada!');
             }else{
                 echo('Error de agregacion!');
+=======
+            try{
+                $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+                $con = $db->getConexion();
+                $stat = $con->prepare( "INSERT INTO cuentas (ID_Empleado,Cargo,Email,Contra) VALUES ( '$this->ID_Empleado','$this->Cargo','$this->email','$this->contra' );" ); 
+                $stat->execute();
+            }catch (PDOException $e)
+            {
+                echo $e->getMessage();
+>>>>>>> e3f7544a7bd83a35c5f5cbecade9c1765f3e7abc
             }
         }
 
         function EliminarCuenta(){
+            try{
+                $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+                $con = $db->getConexion();
+                $stat = $con->prepare("DELETE FROM cuentas WHERE ID_Empleado = '$this->ID_Empleado' ");
+                $stat->execute();
+            }catch (PDOException $e)
+            {
+                echo $e->getMessage();
+            }
+        }
+        function BuscarCuenta ($id)
+        {
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
-            $con = $db->getConexion();
-            $stat = $con->prepare("DELETE FROM cuentas WHERE ID_Empleado = '$this->getID_Empleado' ");
-            $stat->execute();
+            try
+            {
+                $conexion = $db->getConexion();
+                $stat = $conexion->prepare("SELECT * FROM cuentas WHERE RFC = '$id'");
+                $stat->execute();
+                $result = $stat->fetchAll();
+            } catch (PDOException $e)
+            {
+                echo $e->getMessage();
+            }
+            return $result;
         }
     }
 ?>
