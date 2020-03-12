@@ -5,8 +5,9 @@
     <nav>
         <ul>
             <li><a href="../routes/Menu.php">Menú</a></li>
-            <li><a href="">Reservación</a></li>
+            <li><a href="../routes/añadirPersonal.php">Añadir personal</a></li>
             <li><a href="../routes/login.php">Ingreso</a></li>
+
         </ul>
     </nav>
 </Header>
