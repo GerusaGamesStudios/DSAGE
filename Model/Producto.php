@@ -58,10 +58,6 @@
         function setPreparacion($NewPrep) {
             $this->preparacion = $NewPrep;
         }
-        function AddProducto($ID_Producto, $NombreProducto, $Precio,  $Descripción){
-            $newProd = new Producto($ID_Producto, $NombreProducto, $Precio,  $Descripción);
-            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
-            $query = '';
         function setTipo($newtype) {
             $this->tipo = $newtype;
         }
