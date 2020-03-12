@@ -24,12 +24,8 @@ $empleados = Personal::getAllPersonalDB();
                         <?php echo "Horario: " . $empleado["Horario"]?> <br>
                         <?php echo "Telefono: " . $empleado["Telefono"]?> <br>
                         <?php echo "Direccion: " . $empleado["Direccion"]?> <br>
-                        <div class="btnEliminar: ">
-                            <div id="btnDelete" data-idemp="<?php echo $empleado["RFC"]?>">
-                                <button class="delete" (click) > ¡FUERA DE MI VISTA!</button>
-                            </div>
-                        </div>
-
+                        <button type="button" class="btn btn-danger"> ¡FUERA DE MI VISTA! </button>
+                        <button type="button" class="btn btn-primary"> Modificar </button>
                     <div>
                 </div>
             </div>
