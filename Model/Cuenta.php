@@ -57,7 +57,7 @@
 
         function RegistrarCuenta($Datos){ //Recibe arreglo con los datos para crear la cuenta
             $this->ID_Empleado = $Datos[1];
-            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            $db = new BaseDatos('localhost','maya','utf8','root','');
             $con = $db->getConexion();
             $stat = $con->prepare("SELECT * FROM personal WHERE ID_Empleado = '$this->ID_Empleado' ");
             $stat->execute();
@@ -75,7 +75,7 @@
 
         function AñadirCuenta(){
             try{
-                $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+                $db = new BaseDatos('localhost','maya','utf8','root','');
                 $con = $db->getConexion();
                 $stat = $con->prepare( "INSERT INTO cuentas (ID_Empleado,Cargo,Email,Contra) VALUES ( '$this->ID_Empleado','$this->Cargo','$this->email','$this->contra' );" ); 
                 $stat->execute();
@@ -87,7 +87,7 @@
 
         function EliminarCuenta(){
             try{
-                $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+                $db = new BaseDatos('localhost','maya','utf8','root','');
                 $con = $db->getConexion();
                 $stat = $con->prepare("DELETE FROM cuentas WHERE ID_Empleado = '$this->ID_Empleado' ");
                 $stat->execute();
@@ -98,7 +98,7 @@
         }
         static function BuscarCuenta ($id)
         {
-            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            $db = new BaseDatos('localhost','maya','utf8','root','');
             try
             {
                 $conexion = $db->getConexion();

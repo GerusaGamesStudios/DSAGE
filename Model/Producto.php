@@ -71,7 +71,7 @@
             echo("Tipo " . $this->get_Tipo() . '<br>');
         }
         function AddProducto(){
-            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            $db = new BaseDatos('localhost','maya','utf8','root','');
             try {
                 $conexion  = $db->getConexion();
                 $stat = $conexion->prepare("INSERT INTO productos (idProducto,NOMBRE, PRECIO, DESCRIPCION, PREPARACION, TIPO) VALUES('$this->ID_Producto','$this->NombreProducto','$this->Precio','$this->Descripción','$this->preparacion','$this->tipo');");
@@ -85,7 +85,7 @@
         }
 
         function EliminarProducto(){
-            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            $db = new BaseDatos('localhost','maya','utf8','root','');
             try {
                 $conexion  = $db->getConexion();
                 $stat = $conexion->prepare("DELETE FROM productos WHERE idProducto = '$this->ID_Producto' ");
@@ -98,7 +98,7 @@
         }
 
         static function BuscarProducto($codigo){
-            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            $db = new BaseDatos('localhost','maya','utf8','root','');
             try {
                 $conexion  = $db->getConexion();
                 $stat = $conexion->prepare("SELECT * FROM productos WHERE idProducto = '$codigo' ");
