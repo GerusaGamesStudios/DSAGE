@@ -1,4 +1,5 @@
 <?php
+    include (dirname(__DIR__)."/Services/BaseDeDatos.php");
     class Personal{
         private $rfc;
         private $nss;
@@ -172,7 +173,7 @@
             try
             {
                 $conexion = $db->getConexion();
-                $stat = $conexion->prepare("SELECT * FROM personal WHERE RFC = '$this->rfc'");
+                $stat = $conexion->prepare("DELETE FROM personal WHERE RFC = '$this->rfc' ");
                 $stat->execute();
                 $result = $stat->fetchAll();
             } catch (PDOException $e)
@@ -198,7 +199,7 @@
             return $result;
         }
 
-        function getAllPersonalDB(){
+        static function getAllPersonalDB(){
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             try
             {

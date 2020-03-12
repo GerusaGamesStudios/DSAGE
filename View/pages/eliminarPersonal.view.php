@@ -1,25 +1,39 @@
 <?php
 include (dirname(__DIR__)."../../Model/Personal.php");
-$empleados = $m->getAllPersonalDB();
+$empleados = Personal::getAllPersonalDB();
 ?>
+<div class="headSpace">
 
+</div>
 <section>
     <div class="secCont">
         <div class="EliminarPersonal">
         <?php foreach($empleados as $empleado):?>
-            <div class="empleado">
-                <div class="btnEliminar">
-                    <div id="btnDelete" data-idprod="<?php echo $empleado["RFC"]?>">
-                        <i class="fas fa-cart-plus"></i>
-                    </div>
-                </div>
-                <div class="info">
-                    <h1><?php echo $empleado["RFC"]?></h1>
-                    <h2><?php echo $empleado["Nombre"]?></h2>
-                    <h2> <?php echo $empleado["ApellidoP"]?></h2>
-                    <h2><?php echo $empleado["ApellidoM"]?></h2>
+        <div class="row">
+            <div class="col-md-3 mx-auto my-5">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="https://source.unsplash.com/random/200x200" alt="" srcset="">
+                    <div class="card-block">
+                        <h1 class="card-title"><?php echo "RFC: " . $empleado["RFC"]?></h1>
+                        <?php echo "NSS: " . $empleado["NSS"]?> <br>
+                        <?php echo "Nombre: " . $empleado["Nombre"]?>
+                        <?php echo $empleado["ApellidoP"]?>
+                        <?php echo $empleado["ApellidoM"]?>
+                        <?php echo "Puesto: " . $empleado["Puesto"]?> <br>
+                        <?php echo "Sueldo: " . $empleado["Sueldo"]?> <br>
+                        <?php echo "Horario: " . $empleado["Horario"]?> <br>
+                        <?php echo "Telefono: " . $empleado["Telefono"]?> <br>
+                        <?php echo "Direccion: " . $empleado["Direccion"]?> <br>
+                        <div class="btnEliminar: ">
+                            <div id="btnDelete" data-idemp="<?php echo $empleado["RFC"]?>">
+                                <button class="delete" (click) > ¡FUERA DE MI VISTA!</button>
+                            </div>
+                        </div>
+
+                    <div>
                 </div>
             </div>
+        </div>
         <?php endforeach?>
         </div>
     </div>

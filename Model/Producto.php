@@ -1,5 +1,5 @@
 <?php
-include (dirname(__DIR__)."/Services/BaseDeDatos.php");
+    include (dirname(__DIR__)."/Services/BaseDeDatos.php");
     class Producto{
         private $ID_Producto;
         private $NombreProducto;
@@ -58,12 +58,10 @@ include (dirname(__DIR__)."/Services/BaseDeDatos.php");
         function setPreparacion($NewPrep) {
             $this->preparacion = $NewPrep;
         }
-<<<<<<< HEAD
         function AddProducto($ID_Producto, $NombreProducto, $Precio,  $Descripción){
             $newProd = new Producto($ID_Producto, $NombreProducto, $Precio,  $Descripción);
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             $query = '';
-=======
         function setTipo($newtype) {
             $this->tipo = $newtype;
         }
@@ -91,7 +89,6 @@ include (dirname(__DIR__)."/Services/BaseDeDatos.php");
 
         function EliminarProducto(){
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
->>>>>>> e3f7544a7bd83a35c5f5cbecade9c1765f3e7abc
             try {
                 $conexion  = $db->getConexion();
                 $stat = $conexion->prepare("DELETE FROM productos WHERE idProducto = '$this->ID_Producto' ");
@@ -104,7 +101,7 @@ include (dirname(__DIR__)."/Services/BaseDeDatos.php");
         }
 
         static function BuscarProducto($codigo){
-            $db = new BaseDatos('localhost:3307','maya','utf8','root','');
+            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             try {
                 $conexion  = $db->getConexion();
                 $stat = $conexion->prepare("SELECT * FROM productos WHERE idProducto = '$codigo' ");
