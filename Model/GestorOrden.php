@@ -1,14 +1,21 @@
 <?php
+    include (dirname(__DIR__)."/Services/BaseDeDatos.php");
+
     class GestorOrden
     {
         private $ArrayOrdenes = array();
         function __construct()
         {
+            $db = new BaseDatos('localhost','maya','utf8','root','');
             try {
-                $conexion  = $this->db->getConexion();
+                $conexion  = $db->getConexion();
                 $stat = $conexion->prepare('SELECT * FROM ordenes');
                 $stat->execute();
                 $result = $stat->fetchAll();
+                foreach ($result as $res) {
+                   $id = $res['ID_Orden'];
+                }
+                
             } catch (PDOException $e) {
                 echo $e->getMessage();
             }

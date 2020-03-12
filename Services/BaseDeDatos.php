@@ -1,5 +1,5 @@
 <?php
-    define('Puerto', ':3306');
+    define('Puerto', ':3307');
     class BaseDatos{
         private $pdobject;
         function __construct($host,$dbname,$charset,$user,$password)
