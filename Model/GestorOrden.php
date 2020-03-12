@@ -1,5 +1,5 @@
 <?php
-    include (dirname(__DIR__)."/Services/BaseDeDatos.php");
+    include_once (dirname(__DIR__)."/Services/BaseDeDatos.php");
 
     class GestorOrden
     {

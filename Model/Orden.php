@@ -1,6 +1,8 @@
 <?php
-    include (dirname(__DIR__)."/Model/Producto.php");
-    include (dirname(__DIR__)."/Model/GestorOrden.php");
+    include_once (dirname(__DIR__)."/Model/Producto.php");
+    include_once (dirname(__DIR__)."/Model/GestorOrden.php");
+    include_once (dirname(__DIR__)."/Services/BaseDeDatos.php");
+
     class Orden{
         private $productos = array();
         private $ID_Orden;
@@ -24,6 +26,7 @@
             $stat = $con->prepare( "INSERT INTO ordenes (ID_Orden, TiempoEspera, Mesa) VALUES (null ,'$this->TiempoEspera','$this->mesa');" ); 
             $stat->execute();
             $idOrden = intval($con->lastInsertId());
+            $this->ID_Orden = $idOrden;
             foreach($this->productos as $producto){
                 $idProd = $producto->getID_Producto();
                 $stat1 = $con->prepare( "INSERT INTO ProductoOrden (ID_Orden, ID_Producto) VALUES ( '$idOrden','$idProd');" ); 
@@ -63,6 +66,6 @@
         $numMesa = $_POST['numesa'];
         $nuevaOrden = new Orden($prods,$numMesa);
         $nuevaOrden->AddOrdenDB();
-        echo "OrdenCreada";
+        echo $nuevaOrden->getID_Orden();
     }
 ?>
