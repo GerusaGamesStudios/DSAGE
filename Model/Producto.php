@@ -59,11 +59,6 @@
         function setPreparacion($NewPrep) {
             $this->preparacion = $NewPrep;
         }
-        function AddProducto($ID_Producto, $NombreProducto, $Precio,  $Descripción){
-            $newProd = new Producto($ID_Producto, $NombreProducto, $Precio,  $Descripción,3,"Comida");
-            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
-            $query = '';
-        }
         function setTipo($newtype) {
             $this->tipo = $newtype;
         }
@@ -75,7 +70,7 @@
             echo("Preparación " . $this->get_Preparacion(). '<br>' );
             echo("Tipo " . $this->get_Tipo() . '<br>');
         }
-        function AddProducto2(){
+        function AddProducto(){
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             try {
                 $conexion  = $db->getConexion();
