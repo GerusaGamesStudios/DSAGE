@@ -1,5 +1,6 @@
 <?php
     include (dirname(__DIR__)."/Model/Producto.php");
+    include (dirname(__DIR__)."/Model/GestorOrden.php");
     class Orden{
         private $productos = array();
         private $ID_Orden;
@@ -29,6 +30,20 @@
                 $stat1->execute();
             }
         }
+
+        function ObtenerProductosOrden($codigo){
+            $db = new BaseDatos('localhost','maya','utf8','root','');
+            try {
+                $conexion  = $db->getConexion();
+                $stat = $conexion->prepare("SELECT * FROM productoorden WHERE ID_Orden = '$codigo' ");
+                $stat->execute();
+                $result = $stat->fetchAll();
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
+            return $result;
+        }
+        
         function getOrden(){
             return $this->productos;
         }
