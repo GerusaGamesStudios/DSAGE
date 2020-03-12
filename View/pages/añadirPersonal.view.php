@@ -3,10 +3,8 @@
 include (dirname(__DIR__)."../../Model/Personal.php");
 $p = new Personal($rfc,$nss,$nombre,$apellidop,$apellidom,$puesto,$sueldo,$horario,$telefono,$direccion);
 ?>
-
 <main>
     <div class="headSpace">
-        
     </div>
     <section>
         <div class="addpers">

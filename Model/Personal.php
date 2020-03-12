@@ -183,7 +183,7 @@
             return $result;
         }
 
-        function BuscarPersonal ($id)
+        static function BuscarPersonal ($id)
         {
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             try
