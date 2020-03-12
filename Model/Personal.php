@@ -156,7 +156,7 @@
             {
                 $conexion = $db->getConexion();
                 $stat =$conexion->prepare("INSERT INTO personal (RFC, NSS, Nombre, ApellidoP, ApellidoM, Puesto, Sueldo, Horario, Telefono, Direccion)
-                 VALUES('$this->rfc', '$this->nss', '$this->nombre', '$this->apellidop', '$this->get_apellidom', '$this->puesto', '$this->sueldo', '$this->horario', '$this->telefono', '$this->direccion');");
+                 VALUES('$this->rfc', '$this->nss', '$this->nombre', '$this->apellidop', '$this->apellidom', '$this->puesto', '$this->sueldo', '$this->horario', '$this->telefono', '$this->direccion');");
                  $stat->execute();
                  $result = $stat->fetchAll();
             } catch (PDOException $e)

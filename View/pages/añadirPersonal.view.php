@@ -1,7 +1,8 @@
 <?php
 
 include (dirname(__DIR__)."../../Model/Personal.php");
-if($_SERVER['REQUEST_METHOD' == "POST"]){
+$listo = '';
+if($_SERVER['REQUEST_METHOD'] == "POST"){
     $rfc = $_POST['rfc'];
     $nss = $_POST['nss'];
     $nombre = $_POST['nombre'];
@@ -13,12 +14,15 @@ if($_SERVER['REQUEST_METHOD' == "POST"]){
     $telefono = $_POST['telefono'];
     $direccion = $_POST['direccion'];
     $p = new Personal($rfc,$nss,$nombre,$apellidop,$apellidom,$puesto,$sueldo,$horario,$telefono,$direccion);
+    $p->AddPersonal();
+    $listo .= 'PERSONAL AGREGADO';
 }
 ?>
 <main>
     <div class="headSpace">
     </div>
     <section>
+        <?php echo $listo?>
         <div class="addpers">
             <form action="<?PHP echo $_SERVER['PHP_SELF']?>" method="POST">
                 <input type="text" placeholder="RFC" name="rfc">
