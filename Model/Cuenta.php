@@ -1,5 +1,4 @@
 <?php
-
     include (dirname(__DIR__)."/Services/BaseDeDatos.php");
     class Cuenta{
         private $ID_Empleado;
