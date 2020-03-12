@@ -1,5 +1,6 @@
 <?php
     include (dirname(__DIR__)."/Services/BaseDeDatos.php");
+
     class Producto{
         private $ID_Producto;
         private $NombreProducto;
@@ -58,6 +59,11 @@
         function setPreparacion($NewPrep) {
             $this->preparacion = $NewPrep;
         }
+        function AddProducto($ID_Producto, $NombreProducto, $Precio,  $Descripción){
+            $newProd = new Producto($ID_Producto, $NombreProducto, $Precio,  $Descripción,3,"Comida");
+            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            $query = '';
+        }
         function setTipo($newtype) {
             $this->tipo = $newtype;
         }
@@ -69,7 +75,7 @@
             echo("Preparación " . $this->get_Preparacion(). '<br>' );
             echo("Tipo " . $this->get_Tipo() . '<br>');
         }
-        function AddProducto(){
+        function AddProducto2(){
             $db = new BaseDatos('localhost:3306','maya','utf8','root','');
             try {
                 $conexion  = $db->getConexion();
@@ -97,7 +103,7 @@
         }
 
         static function BuscarProducto($codigo){
-            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            $db = new BaseDatos('localhost:3307','maya','utf8','root','');
             try {
                 $conexion  = $db->getConexion();
                 $stat = $conexion->prepare("SELECT * FROM productos WHERE idProducto = '$codigo' ");
@@ -108,7 +114,7 @@
             }
             return $result;
         }
-    }   
+    }  
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         $idProducto = $_GET['idprod'];
