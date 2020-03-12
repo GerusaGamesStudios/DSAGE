@@ -5,7 +5,7 @@
         //Constructor
         private  $db;
         function __construct(){
-            $db = new BaseDatos('localhost','maya','utf8','root','');
+            $this->db = new BaseDatos('localhost','maya','utf8','root','');
         }   
 
         function getAllCuentasBd(){

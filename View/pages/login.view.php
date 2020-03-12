@@ -1,12 +1,13 @@
 <?php
 include (dirname(__DIR__)."../../Model/Autenticacion.php");
-    
+    $a = '';
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         $usuario = $_POST['user'];
         $contraseña = $_POST['contra'];
         $auth = new Autenticacion();
         $auth->iniciarSesion($usuario,$contraseña);
-        }
+        $a .= 'Intento registrado';
+    }
 ?>
 
 <main>
@@ -14,8 +15,9 @@ include (dirname(__DIR__)."../../Model/Autenticacion.php");
 
     </div>
     <section>
+        <?php echo $a?>
         <div class="loginReg">
-            <form action="">
+            <form action="<?PHP ECHO $_SERVER['PHP_SELF']?>" method="POST">
                 <input type="text" placeholder="IDUsuario">
                 <input type="text" name="" id="" placeholder="Contraseña">
                 <input type="submit" value="verificar">
@@ -24,3 +26,6 @@ include (dirname(__DIR__)."../../Model/Autenticacion.php");
         </div>
     </section>
 </main>
+
+<script src="../../Controller/jquery.js"></script>
+<script src="../../Controller/loginController.js"></script>
