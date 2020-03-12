@@ -8,5 +8,5 @@
     <div class="headSpace">
 
     </div>
-    <h1 style="text-align: center">COMPRA COMPLETADA SU TICKET ES: <?php echo $idTicket?></h1>
+    <h1 style="text-align: center; margin-top:200px; font-family:'Roboto'">COMPRA COMPLETADA SU TICKET ES: <?php echo $idTicket?></h1>
 </main>
