@@ -14,7 +14,7 @@ include (dirname(__DIR__)."../../Model/Autenticacion.php");
 
     </div>
     <section>
-        <?php echo $a?>
+        <?php var_dump( $a)?>
         <div class="loginReg">
             <form action="<?PHP ECHO $_SERVER['PHP_SELF']?>" method="POST">
                 <input type="text" placeholder="IDUsuario">
