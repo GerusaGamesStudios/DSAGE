@@ -4,6 +4,9 @@
     background-color:#e8e8e8;
     min-height: 400px;
     border-radius: 15px 15px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
 }
 .secCont{
     min-height: 100vh;
@@ -110,8 +113,38 @@
     padding: 20px;
     background-color: #c2c2c2;
     min-height: 50px;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
 }
-.elementoCarito{
+.elementoCarrito{
     padding: 20px;
+    max-width: 250px;
+    margin: 10px;
     background-color: #000000;
+}
+.elementoCarrito h2{
+    font-size: 18px;
+}
+.elementoCarrito h3{
+    font-size: 14px;
+    font-weight: 300;
+}
+.elementoCarrito h4{
+    width: 100%;
+    text-align: right;
+    font-size: 14px;
+}
+#crearOrden{
+    width: 100%;
+    background-color: #443730;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    font-weight: 400;
+    font-size: 24px;
+    font-family: 'Roboto','Arial';
+}
+#crearOrden{
+    cursor: pointer;
 }

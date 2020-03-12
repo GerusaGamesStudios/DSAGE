@@ -35,9 +35,14 @@ $productos = $m->getAllProductosBd();
         </div>
 
         <div id="carritoCompras">
-            <div class="elementoCarito">
-
-            </div>
+            <!-- <div class="elementoCarrito">
+                <h2>Nombre</h2>
+                <h3>Descripcion</h3>
+                <h4>precio</h4>
+            </div> -->
+        </div>
+        <div id="crearOrden">
+            CREAR ORDEN
         </div>
     </div>
 </section>
