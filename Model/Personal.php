@@ -197,5 +197,20 @@
             }
             return $result;
         }
+
+        function getAllPersonalDB(){
+            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            try
+            {
+                $conexion = $db->getConexion();
+                $stat = $conexion->prepare("SELECT * FROM personal");
+                $stat->execute();
+                $result = $stat->fetchAll();
+            } catch (PDOException $e)
+            {
+                echo $e->getMessage();
+            }
+            return $result;
+        }
     }      
 ?>

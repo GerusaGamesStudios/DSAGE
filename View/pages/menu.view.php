@@ -47,5 +47,4 @@ $productos = $m->getAllProductosBd();
     </div>
 </section>
 <script src="../../Controller/jquery.js"></script>
-<script src="../../Controller/menuController.js">
-</script>
+<script src="../../Controller/menuController.js"></script>
