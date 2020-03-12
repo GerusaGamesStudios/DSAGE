@@ -19,7 +19,7 @@
                 $vec[] = $reg;
                 $IDs = array();
                 foreach($vec as $producto){
-                    array_push($IDs,$producto["idProducto"]);
+                    array_push($IDs,$producto["idPRODUCTO"]);
                 }
                 $orden = new Orden($IDs,$reg["mesa"]);
                 array_push($this->ArrayOrdenes, $orden);
