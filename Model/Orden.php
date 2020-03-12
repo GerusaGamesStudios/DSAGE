@@ -25,7 +25,7 @@
             $idOrden = intval($con->lastInsertId());
             foreach($this->productos as $producto){
                 $idProd = $producto["idProducto"];
-                $stat1 = $con->prepare( "INSERT INTO ProductoOrden (ID_Orden, ID_Producto) VALUES ( '$idOrden','$idProd');" ); 
+                $stat1 = $con->prepare( "INSERT INTO productoorden (ID_Orden, ID_Producto) VALUES ( '$idOrden','$idProd');" ); 
                 $stat1->execute();
             }
         }
