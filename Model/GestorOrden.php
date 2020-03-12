@@ -4,9 +4,6 @@
         private $ArrayOrdenes = array();
         function __construct()
         {
-<<<<<<< HEAD
-            
-=======
             try {
                 $conexion  = $this->db->getConexion();
                 $stat = $conexion->prepare('SELECT * FROM ordenes');
@@ -27,7 +24,6 @@
                 $orden = new Orden($IDs,$reg["mesa"]);
                 array_push($this->ArrayOrdenes, $orden);
             }
->>>>>>> 043ad5a4ada628b8dcc41665deb1e55d5ef31add
         }
         function getOrdenes(){
             return $this->ArrayOrdenes;
