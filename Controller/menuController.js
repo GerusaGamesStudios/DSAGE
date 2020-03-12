@@ -32,6 +32,7 @@ $(document).ready(function(){
             data: {"productos":elementosCarrito,"numesa":3},
             success: function (response) {
                 window.location.href = "http://localhost/DSAGE/View/routes/ticket.php?id=" + response;
+                //holaaa
             }
         });
     });
