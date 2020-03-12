@@ -17,8 +17,8 @@ include (dirname(__DIR__)."../../Model/Autenticacion.php");
         <?php var_dump( $a)?>
         <div class="loginReg">
             <form action="<?PHP ECHO $_SERVER['PHP_SELF']?>" method="POST">
-                <input type="text" placeholder="IDUsuario">
-                <input type="password" name="" id="" placeholder="Contraseña">
+                <input type="text" placeholder="IDUsuario" name="user">
+                <input type="password" name="contra" id="" placeholder="Contraseña">
                 <input type="submit" value="verificar">
             </form>
             
