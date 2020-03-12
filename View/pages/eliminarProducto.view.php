@@ -23,6 +23,7 @@ $p = new Producto($ID_Producto, $NombreProducto, $Precio, $Descripción, $newpre
                     <h3> <?php echo $producto["PRECIO"]?> </h3>
                     <h4> <?php echo $producto["TIPO"]?> </h4>
                 </div>
+                
         </div>
         <?php endforeach ?>
     </div>
