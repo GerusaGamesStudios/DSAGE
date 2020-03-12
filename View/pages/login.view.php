@@ -5,8 +5,7 @@ include (dirname(__DIR__)."../../Model/Autenticacion.php");
         $usuario = $_POST['user'];
         $contraseña = $_POST['contra'];
         $auth = new Autenticacion();
-        $auth->iniciarSesion($usuario,$contraseña);
-        $a .= 'Intento registrado' . $auth;
+        $a =  $auth->iniciarSesion($usuario,$contraseña);
     }
 ?>
 
