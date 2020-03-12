@@ -48,5 +48,6 @@
         $numMesa = $_POST['numesa'];
         $nuevaOrden = new Orden($prods,$numMesa);
         $nuevaOrden->AddOrdenDB();
+        echo "OrdenCreada";
     }
 ?>
