@@ -1,5 +1,5 @@
 <?php
-    require 'Model/Producto.php';
+    include (dirname(__DIR__)."/Model/Producto.php");
     class Orden{
         private $productos = array();
         private $ID_Orden;
@@ -9,7 +9,8 @@
         {
             foreach($productosJS as $producto){
                 $result = Producto::BuscarProducto($producto);
-                $newprod = new Producto($result["idProducto"] , $result["NOMBRE"] , $result["PRECIO"] , $result["DESCRIPCION"], $result["TIPO"] , $result["TIPO"]);
+                $result = $result[0];
+                $newprod = new Producto($result["idPRODUCTO"] , $result["NOMBRE"] , $result["PRECIO"] , $result["DESCRIPCION"], $result["TIPO"] , $result["TIPO"]);
                 array_push($this->productos, $newprod);
                 $this->TiempoEspera += $newprod->get_Preparacion();
                 $this->mesa = $mesa;
@@ -17,7 +18,7 @@
         }
 
         function AddOrdenDB(){
-            $db = new BaseDatos('localhost:3306','maya','utf8','root','');
+            $db = new BaseDatos('localhost:3307','maya','utf8','root','');
             $con = $db->getConexion();
             $stat = $con->prepare( "INSERT INTO ordenes (ID_Orden, TiempoEspera, Mesa) VALUES (null ,'$this->TiempoEspera','$this->mesa');" ); 
             $stat->execute();
@@ -43,8 +44,9 @@
     }
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-        $productos = $_GET['productos'];
-        $numMesa = $_GET['numesa'];
-
+        $prods = $_POST['productos'];
+        $numMesa = $_POST['numesa'];
+        $nuevaOrden = new Orden($prods,$numMesa);
+        $nuevaOrden->AddOrdenDB();
     }
 ?>

@@ -26,6 +26,13 @@ $(document).ready(function(){
     });
 
     $(document).on('click','#crearOrden',function(){
-        alert("crear orden");
+        $.ajax({
+            type: "POST",
+            url: "../../Model/Orden.php",
+            data: {"productos":elementosCarrito,"numesa":3},
+            success: function (response) {
+                alert(response);
+            }
+        });
     });
 });
