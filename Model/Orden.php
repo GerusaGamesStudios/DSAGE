@@ -12,7 +12,7 @@
                 $result = $result[0];
                 $newprod = new Producto($result["idPRODUCTO"] , $result["NOMBRE"] , $result["PRECIO"] , $result["DESCRIPCION"], $result["TIPO"] , $result["TIPO"]);
                 array_push($this->productos, $newprod);
-                $this->TiempoEspera += $newprod->get_Preparacion();
+                $this->TiempoEspera += intval($newprod->get_Preparacion());
                 $this->mesa = $mesa;
             }
         }
@@ -24,7 +24,7 @@
             $stat->execute();
             $idOrden = intval($con->lastInsertId());
             foreach($this->productos as $producto){
-                $idProd = $producto["idProducto"];
+                $idProd = $producto->getID_Producto();
                 $stat1 = $con->prepare( "INSERT INTO ProductoOrden (ID_Orden, ID_Producto) VALUES ( '$idOrden','$idProd');" ); 
                 $stat1->execute();
             }
