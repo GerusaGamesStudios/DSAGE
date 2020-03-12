@@ -98,11 +98,7 @@
         }
 
         static function BuscarProducto($codigo){
-<<<<<<< HEAD
             $db = new BaseDatos('localhost','maya','utf8','root','');
-=======
-            $db = new BaseDatos('localhost:3307','maya','utf8','root','');
->>>>>>> 035363c9b25f6184dc8556d4dfbe67bc3154e340
             try {
                 $conexion  = $db->getConexion();
                 $stat = $conexion->prepare("SELECT * FROM productos WHERE idProducto = '$codigo' ");
