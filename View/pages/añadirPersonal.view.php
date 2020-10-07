@@ -34,8 +34,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 <input type="text" placeholder="sueldo" name="sueldo">
                 <input type="text" placeholder="Horario" name="horario">
                 <input type="text" placeholder="Teléfono" name="telefono">
-                <input type="text" placeholder="Dirección" name="direccion">
-                <input type="submit" value="Registrar">
+                <input type="text" placeholder="Dirección" name="direccion"><br>
+                
+                <button type="button" class="btn btn-primary"> Añadir Empleado </button>
             </form>
         </div>
     </section>

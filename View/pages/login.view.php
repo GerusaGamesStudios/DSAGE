@@ -21,7 +21,6 @@ include (dirname(__DIR__)."../../Model/Autenticacion.php");
                 <input type="password" name="contra" id="" placeholder="Contraseña">
                 <input type="submit" value="verificar">
             </form>
-            
         </div>
     </section>
 </main>

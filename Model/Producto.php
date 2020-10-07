@@ -1,8 +1,8 @@
 <?php
-    include_once (dirname(__DIR__)."/Services/BaseDeDatos.php");
+    require_once (dirname(__DIR__)."/Services/BaseDeDatos.php");
 
     class Producto{
-        private $ID_Producto;
+        private $idProducto;
         private $NombreProducto;
         private $Precio;
         private $Descripción;
@@ -10,8 +10,9 @@
         private $tipo;
 
         //Constructor's
-        function __construct($ID_Producto, $NombreProducto, $Precio,  $Descripción, $newpreparacion, $tipo) {
-            $this->ID_Producto = $ID_Producto;
+        function __construct($idProducto,$NombreProducto, $Precio,  $Descripción, $newpreparacion, $tipo) {
+            echo 'Iniciando producto <br>';
+            $this->idProducto = $idProducto;
             $this->NombreProducto = $NombreProducto;
             $this->Precio = $Precio;
             $this->Descripción = $Descripción;
@@ -19,7 +20,7 @@
             $this->tipo = $tipo;
         }
         function getID_Producto() {
-            return $this->ID_Producto;
+            return $this->idProducto;
         }
     
         function getNombreProducto() {
@@ -39,10 +40,6 @@
 
         function get_Tipo(){
             return $this->tipo;
-        }
-    
-        function setID_Producto($ID_Producto) {
-            $this->ID_Producto = $ID_Producto;
         }
     
         function setNombreProducto($NombreProducto) {
@@ -74,7 +71,9 @@
             $db = new BaseDatos('localhost','maya','utf8','root','');
             try {
                 $conexion  = $db->getConexion();
-                $stat = $conexion->prepare("INSERT INTO productos (idProducto,NOMBRE, PRECIO, DESCRIPCION, PREPARACION, TIPO) VALUES('$this->ID_Producto','$this->NombreProducto','$this->Precio','$this->Descripción','$this->preparacion','$this->tipo');");
+                $stat = $conexion->prepare("INSERT INTO productos (NOMBRE, PRECIO, DESCRIPCION, PREPARACION, TIPO)
+                                            VALUES('$this->NombreProducto','$this->Precio','$this->Descripción',
+                                            '$this->preparacion','$this->tipo');");
                 $stat->execute();
                 $result = $stat->fetchAll();
             } catch (PDOException $e) {
@@ -88,7 +87,25 @@
             $db = new BaseDatos('localhost','maya','utf8','root','');
             try {
                 $conexion  = $db->getConexion();
-                $stat = $conexion->prepare("DELETE FROM productos WHERE idProducto = '$this->ID_Producto' ");
+                $stat = $conexion->prepare("DELETE FROM productos WHERE idPRODUCTO = '$this->idProducto' ");
+                $stat->execute();
+                $result = $stat->fetchAll();
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
+            return $result;
+        }
+
+        function ModificarProducto(){
+            $db = new BaseDatos('localhost','maya','utf8','root','');
+            try {
+                $conexion  = $db->getConexion();
+                $stat = $conexion->prepare("UPDATE productos SET NOMBRE='$this->NombreProducto',
+                                            PRECIO='$this->Precio',
+                                            DESCRIPCION='$this->Descripción',
+                                            PREPARACION='$this->preparacion',
+                                            TIPO='$this->tipo'
+                                            WHERE idPRODUCTO = '$this->idProducto' ");
                 $stat->execute();
                 $result = $stat->fetchAll();
             } catch (PDOException $e) {
@@ -98,10 +115,25 @@
         }
 
         static function BuscarProducto($codigo){
+            //$db = new BaseDatos('localhost','maya','utf8','root','');
+            $mysqli = new mysqli("localhost", "root", "", "maya");
+            try {
+                //$conexion  = $db->getConexion();
+                /*$stat = $conexion->prepare("SELECT * FROM productos WHERE idPRODUCTO = '$codigo' ");
+                $stat->execute();*/
+                $result = $mysqli->query("SELECT * FROM productos WHERE idPRODUCTO = '$codigo' ");
+                //$result = $stat->fetchAll();
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
+            return $result;
+        }
+
+        static function getAllProductos(){
             $db = new BaseDatos('localhost','maya','utf8','root','');
             try {
                 $conexion  = $db->getConexion();
-                $stat = $conexion->prepare("SELECT * FROM productos WHERE idProducto = '$codigo' ");
+                $stat = $conexion->prepare("SELECT * FROM productos ");
                 $stat->execute();
                 $result = $stat->fetchAll();
             } catch (PDOException $e) {
@@ -111,9 +143,9 @@
         }
     }  
 
-    if($_SERVER['REQUEST_METHOD'] == "GET"){
-        $idProducto = $_GET['idprod'];
+    /*if($_SERVER['REQUEST_METHOD'] == "GET"){
+        $idProducto = $_GET['id'];
         $producto = Producto::BuscarProducto($idProducto);
         echo json_encode($producto);
-    }
+    }*/
 ?>
